@@ -54,12 +54,6 @@ function App() {
 				</ul>
 			</nav>
 			<PokemonCard pokemon={pokemon} />
-			{/* <button type="button" onClick={() => setPokemonName("bulbasaur")}>
-				bulbisaur
-			</button>
-			<button type="button" onClick={() => setPokemonName("mew")}>
-				mew
-			</button> */}
 		</div>
 	);
 }
