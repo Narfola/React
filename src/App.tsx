@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 
 import PokemonCard from "./components/PokemonCard";
+import NavBar from "./components/NavBar";
 
 const pokemonList = [
 	{
@@ -29,7 +30,7 @@ const pokemonList = [
 	},
 ];
 function App() {
-	const [pokemonName, setPokemonName] = useState(pokemonList[0].name);
+	const [pokemonName, setPokemonName] = useState("bulbasaur");
 
 	const pokemon = pokemonList.find((pokemon) => pokemon.name === pokemonName);
 
@@ -39,23 +40,9 @@ function App() {
 
 	return (
 		<div>
-			<nav>
-				<ul className="AppUl">
-					{pokemonList.map((pokemon) => (
-						<li key={pokemon.name}>
-							<button
-								type="button"
-								onClick={() => setPokemonName(pokemon.name)}
-							>
-								{pokemon.name}
-							</button>
-						</li>
-					))}
-				</ul>
-			</nav>
+			<NavBar setPokemonName={setPokemonName} pokemonList={pokemonList} />
 			<PokemonCard pokemon={pokemon} />
 		</div>
 	);
 }
-
 export default App;
